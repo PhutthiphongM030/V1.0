@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body { background: #f5f5f5; }
+    .header-main {
+      background: linear-gradient(90deg, #ff8000 60%, #ffb347 100%);
+      color: #fff;
+      padding: 0;
+      min-height: 130px;
+      box-shadow: 0 4px 16px #0002;
+      position: relative;
+      z-index: 10;
+    }
+    .header-main .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      animation: fadeInLeft 1s;
+    }
+    .header-logo img {
+      height: 120px;
+      margin-right: 18px;
+      filter: drop-shadow(0 2px 8px #0003);
+      transition: transform 0.3s;
+    }
+    .header-logo img:hover {
+      transform: scale(1.07) rotate(-3deg);
+    }
+    .header-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .header-title .th {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 8px #0002;
+      animation: fadeInDown 1.2s;
+    }
+    .header-title .en {
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      opacity: 0.85;
+      animation: fadeInDown 1.5s;
+    }
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: fadeInRight 1s;
+    }
+    .header-controls label {
+      margin-bottom: 0;
+      margin-right: 6px;
+      font-size: 1rem;
+    }
+    .header-controls .btn-group {
+      margin-right: 8px;
+    }
+    .header-controls .btn {
+      padding: 0 6px;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      color: #fff;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .header-controls .btn.active, .header-controls .btn:focus {
+      background: #333;
+      color: #fff;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .header-controls .btn.bg-dark, .header-controls .btn.bg-light {
+      font-size: 1rem;
+      padding: 0 7px;
+      border-radius: 2px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+    .header-controls .form-control {
+      width: 140px;
+      margin-left: 8px;
+      height: 28px;
+      font-size: 0.95rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      background: #fff8;
+      color: #222;
+      transition: box-shadow 0.2s;
+    }
+    .header-controls .form-control:focus {
+      box-shadow: 0 0 0 2px #ff8000;
+      border-color: #ff8000;
+    }
+    .header-controls .icon-link {
+      color: #fff;
+      margin: 0 4px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: color 0.2s;
+    }
+    .header-controls .icon-link:hover {
+      color: #222;
+      text-decoration: underline;
+    }
+    .header-controls img {
+      height: 20px;
+      margin-left: 2px;
+      margin-right: 2px;
+      vertical-align: middle;
+      filter: drop-shadow(0 1px 2px #0002);
+      transition: transform 0.2s;
+    }
+    .header-controls img:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    .navbar-custom {
+      background: #222;
+      font-size: 1.05rem;
+      border-bottom: 1px solid #111;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .navbar-custom .navbar-nav .nav-link {
+      color: #fff;
+      padding: 12px 22px;
+      font-weight: 500;
+      transition: color 0.2s, background 0.2s;
+    }
+    .navbar-custom .navbar-nav .nav-link:hover,
+    .navbar-custom .navbar-nav .nav-link.active {
+      color: #ff8000;
+      background: #181818;
+    }
+    .navbar-custom .dropdown-menu {
+      background: #222;
+      border: none;
+    }
+    .navbar-custom .dropdown-item {
+      color: #fff;
+    }
+    .navbar-custom .dropdown-item:hover {
+      background: #ff8000;
+      color: #fff;
+    }
+    .navbar-custom .nav-item .nav-link {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-custom .nav-item .nav-link img {
+      height: 28px;
+      margin-left: 8px;
+    }
+    .navbar-custom .nav-item .nav-link.ita {
+      padding-right: 0;
+    }
+    .main-slider {
+      background: linear-gradient(180deg, #fff 80%, #ffb34722 100%);
+      min-height: 420px;
+      position: relative;
+      margin-bottom: 0;
+      box-shadow: 0 8px 32px #ff800033;
+      overflow: hidden;
+    }
+    .main-slider .carousel-inner {
+      border-radius: 0;
+    }
+    .main-slider .carousel-item img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      filter: brightness(0.97) drop-shadow(0 4px 16px #0002);
+      transition: filter 0.3s;
+    }
+    .main-slider .carousel-item img:hover {
+      filter: brightness(1) drop-shadow(0 8px 32px #ff800055);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #ff8000;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #0003;
+    }
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+    .category-tabs {
+      background: #fff;
+      border-bottom: 2px solid #ff8000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      box-shadow: 0 2px 8px #ff800022;
+      position: relative;
+      z-index: 2;
+    }
+    .category-tabs .nav-link {
+      color: #222;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 12px 32px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      background: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s, border-bottom 0.2s, background 0.2s;
+      position: relative;
+    }
+    .category-tabs .nav-link.active {
+      color: #ff8000;
+      border-bottom: 3px solid #ff8000;
+      background: #fff;
+      font-weight: bold;
+      animation: tabActive 0.5s;
+    }
+    .category-tabs .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #ff8000;
+      transition: width 0.3s;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+    .category-tabs .nav-link.active::after {
+      width: 80%;
+    }
+    .news-section {
+      background: #fff;
+      padding: 32px 0 24px 0;
+      min-height: 400px;
+      animation: fadeInUp 0.8s;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-top: 12px;
+    }
+    .news-card {
+      background: linear-gradient(135deg, #fff 80%, #ffb34722 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #ff800033;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      animation: fadeInCard 0.7s;
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 32px #ff800055;
+      transform: translateY(-6px) scale(1.03);
+      z-index: 2;
+    }
+    .news-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      height: 170px;
+      box-shadow: 0 2px 8px #0002;
+      transition: filter 0.2s;
+    }
+    .news-card:hover img {
+      filter: brightness(1.05) drop-shadow(0 4px 16px #ff800055);
+    }
+    .news-card h5 {
+      color: #ff8000;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+      text-shadow: 0 1px 4px #fff7;
+    }
+    .news-card p {
+      color: #222;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      flex: 1;
+      opacity: 0.95;
+    }
+    .news-card .date {
+      font-size: 0.95em;
+      color: #888;
+      text-align: right;
+      margin-top: 8px;
+    }
+    /* Animation Keyframes */
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes tabActive {
+      from { background: #ff800011;}
+      to { background: #fff;}
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .header-main .container { flex-direction: column; align-items: flex-start; }
+      .header-controls { margin-top: 10px; }
+      .category-tabs .nav-link { padding: 10px 10px; font-size: 1rem; }
+      .main-slider .carousel-item img { height: 220px; }
+      .main-slider { min-height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .header-logo img { height: 48px; }
+      .header-title .th { font-size: 1.1rem; }
+      .header-title .en { font-size: 0.8rem; }
+      .news-card img { height: 90px; }
+      .news-section { padding: 12px 0; }
+      .main-slider .carousel-item img { height: 120px; }
+      .main-slider { min-height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->   
+  <div class="header-main">
+    <div class="container">
+      <div class="header-logo">
+        <img src="img/logo.png" alt="โลโก้">
+        <div class="header-title">
+          <span class="th">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</span>
+          <span class="en">KING MONGKUT'S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK</span>
+        </div>
+      </div>
+      <div class="header-controls">
+        <label>เปลี่ยนการแสดงผล :</label>
+        <div class="btn-group" role="group">
+          <button class="btn btn-sm active" aria-label="ขนาดตัวอักษรปกติ">A</button>
+          <button class="btn btn-sm" style="font-size:1.15rem;" aria-label="ขนาดตัวอักษรกลาง">A</button>
+          <button class="btn btn-sm" style="font-size:1.3rem;" aria-label="ขนาดตัวอักษรใหญ่">A</button>
+        </div>
+        <button class="btn btn-sm bg-dark text-white" aria-label="โหมดเข้ม">C</button>
+        <button class="btn btn-sm bg-light text-dark" aria-label="โหมดสว่าง">C</button>
+        <img src="https://cdn-icons-png.flaticon.com/512/197/197452.png" alt="TH" title="ภาษาไทย">
+        <img src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="EN" title="English">
+        <a href="#" class="icon-link"><i class="bi bi-person"></i> นักศึกษา</a>
+        <a href="#" class="icon-link"><i class="bi bi-people"></i> บุคลากร</a>
+        <input type="text" class="form-control" placeholder="ค้นหา...">
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">หน้าแรก</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">เกี่ยวกับ มจพ.</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">ประวัติ</a></li>
+              <li><a class="dropdown-item" href="#">โครงสร้างองค์กร</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">คณะและหน่วยงาน</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">รับสมัครนักศึกษา</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">วิจัยและบริการวิชาการ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">ติดต่อ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">ชีวิตในรั้วมหาวิทยาลัย</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link ita" href="#"><img src="https://www.kmutnb.ac.th/images/itax.png" alt="ITA"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Slider -->
+  <div id="mainCarousel" class="carousel slide main-slider" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/banner2.png" alt="banner1">
+      </div>
+      <div class="carousel-item">
+        <img src="img/banner.png" alt="banner2">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Category Tabs -->
+  <div style="background:#e6e6e6;">
+    <div class="container-fluid px-0">
+      <div class="row g-0 justify-content-center">
+        <div class="col-12 col-md-8" style="background:#fff;">
+          <ul class="nav category-tabs justify-content-center" id="newsTab" role="tablist" style="background:#fff;border-bottom:2px solid #ff8000;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="uni-tab" data-bs-toggle="tab" data-bs-target="#uni" type="button" role="tab" style="color:#ff8000;">
+                <i class="bi bi-bank"></i> ข่าวมหาวิทยาลัย
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button" role="tab" style="color:#000;">
+                <i class="bi bi-journal-text"></i> ข่าวทุนวิจัย/อบรม
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab" style="color:#000;">
+                <i class="bi bi-person"></i> ข่าวนักศึกษา
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="apply-tab" data-bs-toggle="tab" data-bs-target="#apply" type="button" role="tab" style="color:#000;">
+                <i class="bi bi-journal-text"></i> ข่าวรับสมัครนักศึกษา
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Section -->
+  <div class="tab-content news-section" id="newsTabContent">
+    <div class="tab-pane fade show active" id="uni" role="tabpanel">
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%A8%E0%B8%99%E0%B8%A2%E0%B8%A7%E0%B8%88%E0%B8%A2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9D%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%AF-(%E0%B8%A1%E0%B8%B2%E0%B8%9A%E0%B8%95%E0%B8%B2%E0%B8%9E%E0%B8%94)-%E0%B8%A1%E0%B8%88%E0%B8%9E-%E0%B8%88%E0%B8%94%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9D-(7)/S__53010468.jpg.aspx" alt="news1">
+          <h5>มจพ. เปิดรับสมัครนักศึกษาใหม่ ระดับ ปวช.-ปริญญาตรี ปีการศึกษา 2569 (TCAS1-TCAS4)</h5>
+          <p>มจพ. เปิดรับสมัครนักศึกษาใหม่ ระดับ ปวช.-ปริญญาตรี ปีการศึกษา 2569</p>
+          <div class="date">08/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://stri.kmutnb.ac.th/wp-content/uploads/2025/08/image-1024x576.png" alt="news2">
+          <h5>มจพ. กำหนดทอดผ้าป่าสามัคคี ประจำปี พ.ศ. 2568</h5>
+          <p>มจพ. กำหนดทอดผ้าป่าสามัคคี ประจำปี พ.ศ. 2568 ณ วัดเขียนเขตนครนายก (วัดต่อ)</p>
+          <div class="date">07/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%A1%E0%B8%88%E0%B8%9E-%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%9E%E0%B8%98%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%9A%E0%B8%95%E0%B8%A3-%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3%E0%B8%9B%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%81%E0%B8%A9%E0%B8%B2/%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94-1100x620px.jpg.aspx" alt="news3">
+          <h5>กิจกรรมวันแม่แห่งชาติ</h5>
+          <p>กิจกรรมวันแม่แห่งชาติ ณ มจพ. ประจำปี 2568</p>
+          <div class="date">06/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%A0%E0%B8%B2%E0%B8%84%E0%B8%A7%E0%B8%8A%E0%B8%B2%E0%B8%A7%E0%B8%A8%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%82%E0%B8%A2%E0%B8%98%E0%B8%B2-%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%A7%E0%B8%A8%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3-%E0%B8%A1%E0%B8%88%E0%B8%9E-%E0%B8%88%E0%B8%94%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A/514962753_1604813727394817_8722604223677411850_n-(1).jpg.aspx" alt="news4">
+          <h5>อบรมเชิงปฏิบัติการ</h5>
+          <p>อบรมเชิงปฏิบัติการสำหรับบุคลากรและนักศึกษา</p>
+          <div class="date">05/08/2568</div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="research" role="tabpanel">
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%94%E0%B8%99%E0%B9%84%E0%B8%AB%E0%B8%A7/(%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%A3%E0%B8%A2-%E0%B8%94%E0%B8%A3-%E0%B8%ธ%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%A3-%E0%B8%A8%E0%B8%A5%E0%B8%9B%E0%B8%88%E0%B8%B2%E0%B8%A3)-%E0%B8%AD%E0%B8%98%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%94%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%A2%E0%B9%80%E0%B8%97%E0%B8%84%E0%B9%82%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%A2%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%AD-(1).png.aspx" alt="news5">
+          <h5>โครงการ KMUTNB Green</h5>
+          <p>โครงการรณรงค์สิ่งแวดล้อมและพลังงานสะอาด</p>
+          <div class="date">04/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%82%E0%B8%AD%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A2%E0%B8%99%E0%B8%94%E0%B8%81%E0%B8%9B-%E0%B8%A8-%E0%B8%94%E0%B8%A3-%E0%B8%ธ%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%A3-%E0%B8%A8%E0%B8%A5%E0%B8%9B%E0%B8%88%E0%B8%B2%E0%B8%A3-%E0%B9%80%E0%B8%99%E0%B8%AD%E0%B8%87/%E0%B8%9B%E0%B8%B2%E0%B8%A2%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A2%E0%B8%99%E0%B8%944-02-(1).jpg.aspx" alt="news6">
+          <h5>ประชุมวิชาการระดับชาติ</h5>
+          <p>การประชุมวิชาการระดับชาติ มจพ. ครั้งที่ 20</p>
+          <div class="date">03/08/2568</div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="student" role="tabpanel">
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%A1%E0%B8%88%E0%B8%9E-%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%99%E0%B8%94%E0%B8%9A-2-%E0%B8%95%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%AD%E0%B8%87-%E0%B8%A1-%E0%B9%84%E0%B8%97%E0%B8%A2-%E0%B8%94%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%93%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A7%E0%B8%88/the2025-(1).jpg.aspx" alt="news7">
+          <h5>รับสมัครนักศึกษาใหม่ TCAS 2569</h5>
+          <p>รายละเอียดการรับสมัครนักศึกษาใหม่ TCAS 2569</p>
+          <div class="date">02/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%A1%E0%B8%88%E0%B8%9E-%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%9A%E0%B8%AA%E0%B8%A1%E0%B8%B2%E0%B8%84%E0%B8%A1%E0%B8%A8%E0%B8%A9%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%AF-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A7%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%A2%E0%B9%80%E0%B8%97%E0%B8%84%E0%B9%82%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%A2%E0%B8%AD/IMG_9437-(1).jpg.aspx" alt="news8">
+          <h5>ทุนการศึกษา ป.ตรี และ ป.โท</h5>
+          <p>เปิดรับสมัครทุนการศึกษา ป.ตรี และ ป.โท ประจำปีการศึกษา 2569</p>
+          <div class="date">01/08/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%9E%E0%B8%A1%E0%B8%9E%E0%B9%80%E0%B8%9C%E0%B8%A2%E0%B9%81%E0%B8%9E%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%A7%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B2%E0%B8%A3-Defence-Technology-(Impa/A-review-on-lightweight-materials-for-defence-applications-Present-and-future-developments-(2).jpg.aspx" alt="news9">
+          <h5>นักศึกษาคว้ารางวัลแข่งขันหุ่นยนต์</h5>
+          <p>ทีมนักศึกษามจพ. ได้รับรางวัลชนะเลิศการแข่งขันหุ่นยนต์ระดับประเทศ</p>
+          <div class="date">31/07/2568</div>
+        </div>
+        <div class="news-card">
+          <img src="https://kmutnb.ac.th/getattachment/news/university-news/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%AD%E0%B8%9A%E0%B8%AD%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B9%84%E0%B8%94%E0%B8%A3%E0%B8%9A%E0%B8%AD%E0%B8%99%E0%B8%8D%E0%B8%B2%E0%B8%95%E0%B9%83%E0%B8%AB%E0%B9%80%E0%B8%9B%E0%B8%99%E0%B8%95%E0%B8%A7%E0%B9%81%E0%B8%97%E0%B8%99/S__428679175-(1).jpg.aspx" alt="news10">
+          <h5>กิจกรรมปฐมนิเทศนักศึกษาใหม่</h5>
+          <p>กิจกรรมปฐมนิเทศนักศึกษาใหม่ ประจำปีการศึกษา 2569</p>
+          <div class="date">30/07/2568</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer style="background:#222; color:#fff; padding:32px 0 16px 0; margin-top:32px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div style="font-weight:bold; font-size:1.1rem;">ลิงก์</div>
+          <ul style="list-style:none; padding-left:0; margin-bottom:0;">
+            <li><a href="#" style="color:#ff8000;">เว็บไซต์มหาวิทยาลัย</a></li>
+            <li><a href="#" style="color:#fff;">เว็บไซต์หน่วยงาน</a></li>
+            <li><a href="#" style="color:#fff;">เว็บไซต์บุคลากร</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div style="font-weight:bold; font-size:1.1rem;">ติดต่อ มจพ. กรุณา</div>
+          <div>
+            มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ<br>
+            1518 ถนนประชาราษฎร์ 1 แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพฯ 10800<br>
+            โทรศัพท์ : 0 2555 2000<br>
+            โทรสาร : 0 2587 4350<br>
+            อีเมล : <a href="mailto:pr@kmutnb.ac.th" style="color:#ff8000;">pr@kmutnb.ac.th</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div style="font-weight:bold; font-size:1.1rem;">ติดตามเราได้ที่</div>
+          <div style="font-size:1.5rem;">
+            <a href="#" style="color:#fff; margin-right:10px;"><i class="bi bi-facebook"></i></a>
+            <a href="#" style="color:#fff; margin-right:10px;"><i class="bi bi-twitter"></i></a>
+            <a href="#" style="color:#fff; margin-right:10px;"><i class="bi bi-youtube"></i></a>
+            <a href="#" style="color:#fff; margin-right:10px;"><i class="bi bi-tiktok"></i></a>
+          </div>
+          <div style="margin-top:10px;">
+            <img src="https://www.kmutnb.ac.th/images/itax.png" alt="ITA" style="height:32px;">
+            <img src="https://www.kmutnb.ac.th/images/km_logo.png" alt="KMUTNB" style="height:32px;">
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; color:#bbb; margin-top:18px; font-size:0.95rem;">
+        © 2025 มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
