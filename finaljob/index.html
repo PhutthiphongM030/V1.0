@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เที่ยวสัตหีบไปไหนดี</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
+      min-height: 100vh;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .carousel-inner img {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .card {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+    .card-title {
+      color: #1976d2;
+      font-weight: bold;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border: none;
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1565c0 60%, #00acc1 100%);
+    }
+    .card-body .card {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: none;
+    }
+    footer {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      .carousel-inner img {
+        max-height: 250px !important;
+      }
+      .card-img-top {
+        height: 140px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="img/Black_White_Simple_Halloween_Ghost_Circle_Sticker-removebg-preview.png" alt="logo" width="50" class="me-2">
+        เที่ยวสัตหีบ
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link" href="attractions.html">สถานที่ท่องเที่ยว</a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html">ร้านอาหาร</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">กิจกรรม</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">    
+        <div class="carousel-item active">
+          <img src="img/ทะเล.jpg" class="d-block w-100" alt="หาดสัตหีบ" style="max-height:600px;object-fit:cover;">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="fw-bold">ทะเลสัตหีบ</h5>
+            <p>น้ำใส หาดทรายสวย เหมาะสำหรับการพักผ่อน</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/เกาะ.jpg" class="d-block w-100" alt="เกาะ" style="max-height:600px;object-fit:cover;">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="fw-bold">เกาะสวยงาม</h5>
+            <p>ดำน้ำดูปะการังและสัตว์ทะเลหลากหลาย</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/ทะเล2.jpg" class="card-img-top" alt="หาดสัตหีบ" style="height:210px;object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">หาดทรายแก้ว</h5>
+            <p class="card-text">หาดทรายแก้ว เป็นชายหาดที่โอบล้อมด้วยภูเขา ทำให้มีต้นไม้ธรรมชาติขึ้นอยู่หลากหลายชนิด ทำให้เป็นหาดที่ร่มรื่น รวมไปถึงชายหาดที่สวยงาม น้ำทะเลใสสะอาด และหาดทรายแก้วยังเป็นการท่องเที่ยวเชิงอนุรักษ์แบบยั่งยืนอีกด้วย</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detail1" aria-expanded="false" aria-controls="detail1">
+              เพิ่มเติม
+            </button>
+            <div class="collapse mt-2" id="detail1">
+              <div class="card card-body">
+                ที่ตั้ง : โรงเรียนชุมพลทหารเรือ ในบริเวณอ่าวน้อย ตำบลบางเสร่ อ.สัตหีบ จ.ชลบุรี<br>
+                GPS : <a href="https://goo.gl/maps/6yoJ1sPxX2tPF1GC9" target="_blank">https://goo.gl/maps/6yoJ1sPxX2tPF1GC9</a><br>
+                เวลาเปิด – ปิด : จันทร์ – ศุกร์ 08.00 - 17.00 น.<br>
+                เสาร์ – อาทิตย์ 07.00 - 18.00 น.<br>
+                ค่าเข้า : 50 บาท และเด็ก 10 บาท<br>
+                เบอร์โทรศัพท์ : 038 436 187 ต่อ 2070, 2607
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/เกาะ2.jpg" class="card-img-top" alt="เกาะ" style="height:210px;object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">เกาะขาม</h5>
+            <p class="card-text"> เกาะขาม เป็นเกาะขนาดเล็ก โดยเป็นเกาะที่มีทรัพยากรธรรมชาติที่อุดมสมบูรณ์ มีชายหาดที่สวยงาม หาดทรายเป็นสีขาวละเอียด และจุดที่เป็นมุมมหาชนก็คือ มุมสะพานไม้ที่ทุกคนจะต้องมาเช็คอินถ่ายรูปอัพลง IG กัน นอกจากนี้ยังมีกิจกรรมให้ทำกันอย่าง ดำน้ำดูปะการัง พายเรือคายัค อีกด้วย</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detail2" aria-expanded="false" aria-controls="detail2">
+              เพิ่มเติม
+            </button>
+            <div class="collapse mt-2" id="detail2">
+              <div class="card card-body">
+                ที่ตั้ง : สำนักงานกิจการท่องเที่ยวเชิงอนุรักษ์อุทยานใต้ทะเลเกาะขาม ทัพเรือภาคที่ 1 อ.สัตหีบ จ.ชลบุรี<br>
+                GPS : <a href="https://goo.gl/maps/e2wCMoH1WrhVgBEU9" target="_blank">https://goo.gl/maps/e2wCMoH1WrhVgBEU9</a><br>
+                การซื้อตั๋วเรือข้ามไปเที่ยวเกาะขาม : ซื้อได้ที่ อบต.แสมสาร ใกล้ตลาดแสมสาร โทร. 038-431496<br>
+                ค่าเข้า : 250 บาท<br>
+                เวลาเปิด – ปิด : จันทร์ – ศุกร์ ขาไป จากท่าเรือเขาหมาจอ - เกาะขาม : 08.00 - 11.30 น. ขากลับ จากเกาะขาม – ท่าเรือเขาหมาจอ : 13.00 - 15.00 น.<br>
+                เวลา เปิด – ปิด : เสาร์ อาทิตย์ และวันหยุดนักขัตฤกษ์ ขาไป : 07.00 - 11.30 น. ขากลับ : 13.00 - 16.00 น.<br>
+                * หมายเหตุ ต้องจองตั๋วเรือล่วงหน้าและรับตั๋ว ก่อนเวลาเที่ยวเรือที่ได้จองไว้ 1 ชั่วโมง 
+                <a href="https://www.kohkham.com/index.php/ferry-boat-menu.html" target="_blank">https://www.kohkham.com/index.php/ferry-boat-menu.html</a><br>
+                เบอร์โทรศัพท์ : 093 397 1342
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/อาหาร.jpg" class="card-img-top" alt="อาหารทะเล" style="height:210px;object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">Glass House Boho</h5>
+            <p class="card-text">ร้านอาหารสัตหีบที่ตกแต่งสวยงามสไตล์โบฮีเมียน บวกกับบรรยากาศชิล ๆ ริมทะเล เป็นร้านอาหารริมทะเลสัตหีบที่มีที่ให้นั่งทั้งด้านนอกและด้านในร้าน วันนี้สั่งเป็นอาหารไทย วัตถุดิบหลักเป็นซีฟู้ด ถือว่าสดเลย รสชาติไม่จัดจ้านมาก เพราะมีทั้งแขกไทยและต่างชาติ มีทั้ง “ลาบแซลมอน” จานนี้อร่อยเลย เนื้อแซลมอนหั่นเต๋าคลุกเครื่องลาบ</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#detail3" aria-expanded="false" aria-controls="detail3">
+              เพิ่มเติม
+            </button>
+            <div class="collapse mt-2" id="detail3">
+              <div class="card card-body">
+                ที่ตั้ง : นาจอมเทียน<br>
+                GPS : <a href="https://www.google.com/maps/search/?api=1&query=12.848556,100.901596" target="_blank">https://goo.gl/maps/6yoJ1sPxX2tPF1GC9</a><br>
+                เวลาเปิด – ปิด : จันทร์ – ศุกร์ 08.00 - 17.00 น.<br>
+                เสาร์ – อาทิตย์ 07.00 - 18.00 น.<br>
+                เบอร์โทรศัพท์ : 038255922, 0812666110
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>© 2025 เที่ยวสัตหีบ - เว็บไซต์แนะนำการท่องเที่ยว</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ติดต่อเรา - เที่ยวสัตหีบ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+    .attraction-img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+        body {
+      background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
+      min-height: 100vh;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .carousel-inner img {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .card {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+    .card-title {
+      color: #1976d2;
+      font-weight: bold;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border: none;
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1565c0 60%, #00acc1 100%);
+    }
+    .card-body .card {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: none;
+    }
+    footer {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      .carousel-inner img {
+        max-height: 250px !important;
+      }
+      .card-img-top {
+        height: 140px !important;
+      }
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container.my-5 {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      footer {
+        font-size: 0.95rem;
+        padding: 0.7rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"></a>
+      <img src="img/Black_White_Simple_Halloween_Ghost_Circle_Sticker-removebg-preview.png" alt="logo" width="50" class="me-2">
+        เที่ยวสัตหีบ
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link" href="attractions.html">สถานที่ท่องเที่ยว</a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html">ร้านอาหาร</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">กิจกรรม</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">ติดต่อเรา</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">ติดต่อเรา</h2>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">ชื่อ-นามสกุล</label>
+        <input type="text" class="form-control" placeholder="กรอกชื่อ-นามสกุล">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">อีเมล</label>
+        <input type="email" class="form-control" placeholder="กรอกอีเมล">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">ข้อความ</label>
+        <textarea class="form-control" rows="4" placeholder="เขียนข้อความของคุณ"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+    </form>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>© 2025 เที่ยวสัตหีบ</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

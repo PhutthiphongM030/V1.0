@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สถานที่ท่องเที่ยว - เที่ยวสัตหีบ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .attraction-img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+        body {
+      background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
+      min-height: 100vh;
+    }
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .carousel-inner img {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+    .card {
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+    .card-title {
+      color: #1976d2;
+      font-weight: bold;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border: none;
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1565c0 60%, #00acc1 100%);
+    }
+    .card-body .card {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: none;
+    }
+    footer {
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      .carousel-inner img {
+        max-height: 250px !important;
+      }
+      .card-img-top {
+        height: 140px !important;
+      }
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container.my-5 {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+      background: linear-gradient(90deg, #1976d2 60%, #26c6da 100%);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 767px) {
+      footer {
+        font-size: 0.95rem;
+        padding: 0.7rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"></a>
+      <img src="img/Black_White_Simple_Halloween_Ghost_Circle_Sticker-removebg-preview.png" alt="logo" width="50" class="me-2">
+        เที่ยวสัตหีบ
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link active" href="attractions.html">สถานที่ท่องเที่ยว</a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html">ร้านอาหาร</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">กิจกรรม</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">สถานที่ท่องเที่ยวยอดนิยม</h2>
+    <div class="row">
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="img/หาดนางรำ.jpg" class="card-img-top attraction-img" alt="หาดนางรำ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">หาดนางรำ</h5>
+            <p class="card-text">น้ำทะเลใส หาดทรายสวย วันธรรมดาจะไม่ค่อยมีคนแต่วันหยุดคนจะเยอะมากกและมีร้านค้า ร้านอาหารเยอะเหมือนกัน</p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal1">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="img/เกาะแสมสาร.jpg" class="card-img-top attraction-img" alt="เกาะแสมสาร">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">เกาะแสมสาร</h5>
+            <p class="card-text">เกาะเล็กๆ ที่มีชายหาดและจุดว่ายน้ำ ดำน้ำตื้น และดำน้ำลึก โดยมีการจำกัดจำนวนนักท่องเที่ยวในแต่ละวัน</p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal2">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="img/หาดทรายแก้ว.jpg" class="card-img-top attraction-img" alt="หาดทรายแก้ว">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">หาดทรายแก้ว</h5>
+            <p class="card-text">เป็นสถานที่พักผ่อนทางธรรมชาติที่ไม่ไกลจากกรุงเทพฯ ที่สวยงามมากแห่งหนึ่ง</p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal3">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mt-4">
+        <div class="card flex-fill h-100">
+          <img src="img/เกาะขาม.jpg" class="card-img-top attraction-img" alt="เกาะขาม">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">เกาะขาม</h5>
+            <p class="card-text">สถานที่ท่องเที่ยวเชิงนิเวศที่เงียบสงบ มีหาดทรายสีขาว การดำน้ำชมแนวปะการัง และการล่องเรือ</p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal4">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mt-4">
+        <div class="card flex-fill h-100">
+          <img src="img/ตลาดอาหารทะเลสัตหีบ.jpg" class="card-img-top attraction-img" alt="ตลาดอาหารทะเล">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">ตลาดอาหารทะเลสัตหีบ</h5>
+            <p class="card-text">ตลาดสดแหล่งรวมอาหารทะเล กุ้ง ปู ปลา หอย หมึก ของแห้ง ของทานเล่น มีบริการนึ่ง ย่าง ทอดน้ำปลา สะดวก </p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal5">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mt-4">
+        <div class="card flex-fill h-100">
+          <img src="img/เขาชีจรรย์.jpg" class="card-img-top attraction-img" alt="เขาชีจรรย์">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">เขาชีจรรย์</h5>
+            <p class="card-text">พระพุทธรูปเขาชีจรรย์เป็นพระพุทธรูปที่แกะสลักด้วยเลเซอร์ มีขนาดใหญ่ที่สุดในโลก เป็นสถานที่ท่องเที่ยวที่มีชื่อเสียง รอบๆมีบรรยากาศวิวทิวทัศน์ที่ดีเหมาะกับการมาท่องเที่ยวและพักผ่อน</p>
+            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modal6">รายละเอียด</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">หาดนางรำ</h5></div>
+        <div class="modal-body">หาดทรายขาว น้ำใส บรรยากาศดี เหมาะกับการพักผ่อน
+            GPS: <a href="https://maps.app.goo.gl/9WxhFaJQiEQNKV258" target="_blank">https://goo.gl/maps/3mX4v1y5FzQ2</a><br>
+            เวลาเปิด – ปิด : จันทร์ – ศุกร์ 08.00 - 17.00 น.<br>
+            เสาร์ – อาทิตย์ 07.00 - 18.00 น.<br>
+            ค่าเข้า : 50 บาท และเด็ก 10 บาท<br>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">เกาะแสมสาร</h5></div>
+        <div class="modal-body">เกาะที่มีชื่อเสียงด้านการดำน้ำดูปะการังและสัตว์ทะเล<br>
+            ที่ตั้ง : ตำบลแสมสาร อำเภอสัตหีบ จังหวัดชลบุรี<br>
+            GPS: <a href="https://maps.app.goo.gl/QFcbM2tZtJXYsTQSA" target="_blank">https://maps.app.goo.gl/QFcbM2tZtJXYsTQSA</a><br>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">หาดทรายแก้ว</h5></div>
+        <div class="modal-body">
+          หาดทรายแก้ว น้ำทะเลใสสะอาด ชายหาดขาวยาว เหมาะสำหรับการพักผ่อนและเล่นน้ำ<br>
+          ที่ตั้ง : โรงเรียนชุมพลทหารเรือ ในบริเวณอ่าวน้อย ตำบลบางเสร่ อ.สัตหีบ จ.ชลบุรี<br>
+          GPS : <a href="https://goo.gl/maps/6yoJ1sPxX2tPF1GC9" target="_blank">https://goo.gl/maps/6yoJ1sPxX2tPF1GC9</a><br>
+          เวลาเปิด – ปิด : จันทร์ – ศุกร์ 08.00 - 17.00 น.<br>
+          เสาร์ – อาทิตย์ 07.00 - 18.00 น.<br>
+          ค่าเข้า : 50 บาท และเด็ก 10 บาท<br>
+          เบอร์โทรศัพท์ : 038 436 187 ต่อ 2070, 2607
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal4" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">เกาะขาม</h5></div>
+        <div class="modal-body">
+          เกาะขาม เกาะเล็ก ๆ น้ำใส เหมาะกับการดำน้ำดูปะการังและพักผ่อน<br>
+          ที่ตั้ง : สำนักงานกิจการท่องเที่ยวเชิงอนุรักษ์อุทยานใต้ทะเลเกาะขาม ทัพเรือภาคที่ 1 อ.สัตหีบ จ.ชลบุรี<br>
+          GPS : <a href="https://goo.gl/maps/e2wCMoH1WrhVgBEU9" target="_blank">https://goo.gl/maps/e2wCMoH1WrhVgBEU9</a><br>
+          การซื้อตั๋วเรือข้ามไปเที่ยวเกาะขาม : ซื้อได้ที่ อบต.แสมสาร ใกล้ตลาดแสมสาร โทร. 038-431496<br>
+          ค่าเข้า : 250 บาท<br>
+          เวลาเปิด – ปิด : จันทร์ – ศุกร์ ขาไป จากท่าเรือเขาหมาจอ - เกาะขาม : 08.00 - 11.30 น. ขากลับ จากเกาะขาม – ท่าเรือเขาหมาจอ : 13.00 - 15.00 น.<br>
+          เสาร์ อาทิตย์ และวันหยุดนักขัตฤกษ์ ขาไป : 07.00 - 11.30 น. ขากลับ : 13.00 - 16.00 น.<br>
+          * หมายเหตุ ต้องจองตั๋วเรือล่วงหน้าและรับตั๋ว ก่อนเวลาเที่ยวเรือที่ได้จองไว้ 1 ชั่วโมง<br>
+          <a href="https://www.kohkham.com/index.php/ferry-boat-menu.html" target="_blank">รายละเอียดเพิ่มเติม</a><br>
+          เบอร์โทรศัพท์ : 093 397 1342
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modal5" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">ตลาดอาหารทะเลสัตหีบ</h5></div>
+        <div class="modal-body">แหล่งรวมอาหารทะเลสดใหม่ ราคาย่อมเยา เหมาะสำหรับนักชิมและนักท่องเที่ยว
+            <br>ที่ตั้ง : ตำบลสัตหีบ อำเภอสัตหีบ จังหวัดชลบุรี<br>
+            GPS : <a href="https://maps.app.goo.gl/YVkTtRcLeg9pf1R86" target="_blank">https://maps.app.goo.gl/YVkTtRcLeg9pf1R86</a><br>
+            เวลาเปิด – ปิด : 08.00 - 20.00 น.<br>
+            เบอร์โทรศัพท์ : 038 433 123
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">เขาชีจรรย์</h5></div>
+        <div class="modal-body">
+          เขาชีจรรย์ เป็นภูเขาหินปูนขนาดใหญ่ที่มีภาพแกะสลักพระพุทธรูปด้วยเลเซอร์บนหน้าผา เป็นสถานที่ท่องเที่ยวและสักการะที่มีชื่อเสียงของสัตหีบ<br>
+          ที่ตั้ง: ต.นาจอมเทียน อ.สัตหีบ จ.ชลบุรี<br>
+          GPS: <a href="https://goo.gl/maps/7y3kQw6Qw8v7n8wA7" target="_blank">https://goo.gl/maps/7y3kQw6Qw8v7n8wA7</a><br>
+          เวลาเปิด – ปิด : 06.00 - 18.00 น.<br>
+          เข้าชมฟรี
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center p-3 mt-4 fixed-bottom">
+    <p class="mb-0">© 2025 เที่ยวสัตหีบ</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
